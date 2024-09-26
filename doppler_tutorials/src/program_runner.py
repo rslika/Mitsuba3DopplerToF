@@ -87,7 +87,7 @@ def run_scene_doppler_tof(
     time_sampling_method="antithetic",
     antithetic_shift=None, 
     path_correlation_depth=16,
-    exposure_time=0.0015,
+    exposure_time=0.0005,
     w_g=30,
     max_depth=4,
     use_stratified_sampling_for_each_interval=True,
