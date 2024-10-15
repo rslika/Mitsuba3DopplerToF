@@ -32,7 +32,7 @@ def get_animation_scene_configs():
 def get_scene_configs():
     scene_configs = {
         "cornell-box" : {
-            "max_depth": 4,
+            "max_depth": 2,
             "reference_spp": 4096 * 32,
             "spp": 1024
         },

@@ -91,13 +91,15 @@ def main():
                 exit_if_file_exists=False,
                 export_png=True,
                 show_progress=True,
-                exposure_time=0.0005,
+                exposure_time=0.0015,
                 **common_configs
             )
         # Experiment 1. --> different methods with different correlation depths
         elif args.expnumber == 1:
             time_sampling_methods = ["uniform", "stratified", "antithetic", "antithetic_mirror"]
             path_correlation_depths = [0, 1, 2, 16]   # 16 : full
+            #time_sampling_methods = ["antithetic_mirror"]
+            #path_correlation_depths = [16]   # 16 : full
             for time_sampling_method in time_sampling_methods:
                 for path_correlation_depth in path_correlation_depths:
                     expname = "%s_path_corr_depth_%d" % (time_sampling_method, path_correlation_depth)

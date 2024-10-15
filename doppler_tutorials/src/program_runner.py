@@ -87,7 +87,7 @@ def run_scene_doppler_tof(
     time_sampling_method="antithetic",
     antithetic_shift=None, 
     path_correlation_depth=16,
-    exposure_time=0.0005,
+    exposure_time=0.0015,
     w_g=30,
     max_depth=4,
     use_stratified_sampling_for_each_interval=True,
@@ -145,7 +145,7 @@ def run_scene_doppler_tof(
     single_pass_spp = min(1024, total_spp)
     show_progress = kwargs.get("show_progress", False)
     img_dop = render_image_multi_pass(scene, integrator_doppler, single_pass_spp, total_spp // single_pass_spp, show_progress=show_progress)
-    np.save(output_file, img_dop)
+    np.save(output_file, to_tof_image(img_dop))
 
     if kwargs.get("export_png", False):
         save_tof_image(to_tof_image(img_dop, kwargs.get("exposure_time", 0.0015)), output_path, "%s.png" % expname, **kwargs)

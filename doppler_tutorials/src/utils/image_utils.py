@@ -19,7 +19,6 @@ def to_ldr_image(img):
 
 def rgb2luminance(img):
     return (0.2126 * img[:,:,0]) + (0.7152 * img[:,:,1]) + (0.0722 * img[:,:,2])
-    return (0.01 * img[:,:,0]) + (0.01 * img[:,:,1]) + (0.01 * img[:,:,2])
 
 def load_tof_image(path):
     image = np.load(path)
