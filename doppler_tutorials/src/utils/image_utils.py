@@ -86,9 +86,13 @@ def save_hdr_image(image, output_path, filename, colorbar_also=False, resize=1,
     cv2.imwrite(os.path.join(output_path, filename), image)
 
 def save_speed_image(image, output_path, filename, colorbar_also=False,
-     velocity_range=5, resize=1, **kwargs):
+     velocity_range=50,vmin_percentile=3, vmax_percentaile=99, vmin=None, vmax=None, resize=1, **kwargs):
+    if vmin is None:
+        vmin = np.percentile(image, vmin_percentile)
+    if vmax is None:
+        vmax = np.percentile(image, vmax_percentaile)
     cm = plt.get_cmap('RdBu')
-    norm = plt.Normalize(-velocity_range, velocity_range)
+    norm = plt.Normalize(vmin,vmax )
     if len(image.shape) == 3:
         image = image[:, :, 0]
 

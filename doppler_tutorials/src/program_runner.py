@@ -103,7 +103,8 @@ def run_scene_doppler_tof(
     if output_path is None:
         output_path = os.path.join(scene_name, wave_function_type)
 
-    output_path = os.path.join(base_dir, output_path, "freq_%.3f_offset_%.3f" % (hetero_frequency, hetero_offset))
+    #output_path = os.path.join(base_dir, output_path, "freq_%.3f_offset_%.3f" % (hetero_frequency, hetero_offset))
+    output_path = os.path.join(base_dir, output_path)
     output_file = os.path.join(output_path, "%s.npy" % expname)
 
     # check file already exists

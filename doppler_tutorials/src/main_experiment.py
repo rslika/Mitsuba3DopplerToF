@@ -72,6 +72,10 @@ def main():
         o=heterodyne_offsets
     #f=heterodyne_frequencies
     #o=heterodyne_offsets
+        if f==1:
+            expname0=str(no)+"_hetero"
+        elif f==0: 
+            expname0=str(no)+"_homo"
         common_configs = {
             "scene_name": scene_name,
             "wave_function_type": args.wave_function_type,
@@ -83,7 +87,7 @@ def main():
         # Experiment 0. --> create reference image
         if args.expnumber == 0:
             run_scene_doppler_tof(
-                expname=str(no), 
+                expname=expname0,
                 total_spp=scene_config.get("reference_spp"),
                 time_sampling_method="antithetic",
                 path_correlation_depth=16,
