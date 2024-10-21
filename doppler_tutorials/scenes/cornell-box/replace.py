@@ -16,8 +16,8 @@ for n in range(0,16):
 
 		search_text1 = 'z="0.000"'
 		search_text2 = 'z="0.001"'
-		replace_text1='z="{:.2f}"'.format(-1.5+0.2*n) 
-		replace_text2='z="{:.2f}"'.format(-1.5+0.2*(n+1)) 
+		replace_text1='z="{:.5f}"'.format(-1.5+0.2*n) 
+		replace_text2='z="{:.5f}"'.format(-1.5+0.2*(n+0.001)) 
 		# 使用 replace() 函数搜索和替换文本
 		data = data.replace(search_text1, replace_text1)
 		data = data.replace(search_text2, replace_text2)
@@ -40,8 +40,8 @@ for n in range(0,16):
 		data = file.read()
 		search_text1 = 'z="-0.500"'
 		search_text2 = 'z="-0.450"'
-		replace_text1='z="{:.2f}"'.format(-0.5-0.1*n) 
-		replace_text2='z="{:.2f}"'.format(-0.5-0.1*(n+1)) 
+		replace_text1='z="{:.5f}"'.format(-0.5-0.1*n) 
+		replace_text2='z="{:.5f}"'.format(-0.5-0.1*(n+0.01)) 
 		data = data.replace(search_text1, replace_text1)
 		data = data.replace(search_text2, replace_text2)
 
@@ -103,8 +103,8 @@ for n in range(0,7):
 		data = file.read()
 		search_text1 = 'y="0.000"'
 		search_text2 = 'y="0.001"'
-		replace_text1='y="{:.5f}"'.format(1.2-0.05*n) 
-		replace_text2='y="{:.5f}"'.format(1.2-0.05*(n+0.1)) 
+		replace_text1='y="{:.5f}"'.format(1.2-0.05*(n+0)) 
+		replace_text2='y="{:.5f}"'.format(1.2-0.05*(n+0.01)) 
 		data = data.replace(search_text1, replace_text1)
 		data = data.replace(search_text2, replace_text2)
 

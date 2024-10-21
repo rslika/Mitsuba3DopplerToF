@@ -82,7 +82,7 @@ def save_hdr_image(image, output_path, filename, colorbar_also=False, resize=1,
         os.makedirs(output_path)
     
     if resize != 1:
-        image = cv2.resize(image, (0,0), fx=resize, fy=resize) 
+        image = cv2.resize(image, (0,0), fx=resize, fy=resize)
     cv2.imwrite(os.path.join(output_path, filename), image)
 
 def save_speed_image(image, output_path, filename, colorbar_also=False,

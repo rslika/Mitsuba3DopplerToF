@@ -36,7 +36,7 @@ def run_scene_velocity(scene, scene_name, **kwargs):
     }
     total_spp = kwargs.get("total_spp", 1024)
 
-    output_path = os.path.join(kwargs.get("base_dir"), scene_name, "velocity_gt")
+    output_path = os.path.join(kwargs.get("base_dir"))
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     output_file_name = kwargs.get("output_file_name")
