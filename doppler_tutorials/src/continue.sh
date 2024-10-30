@@ -1,6 +1,5 @@
 basedir=../
-name="doppler_point_correlated_sampler_forward"
-name="doppler_point_correlated_sampler_ball"
+name="doppler_point_correlated_sampler_both"
 fix=".xml"
 for i in {0..4} 
 do

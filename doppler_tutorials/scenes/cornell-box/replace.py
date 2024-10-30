@@ -1,7 +1,7 @@
 # 创建一个变量并存储我们要搜索的文本
 
 # 创建一个变量并存储我们要添加的文本
-for n in range(0,16):
+for n in range(0,5):
 	# 使用 open() 函数以只读模式打开我们的文本文件
 	with open(r"./scenes/cornell-box/doppler_point_correlated_sampler_forward.xml", 'r',encoding='UTF-8') as file:
 
@@ -32,7 +32,7 @@ for n in range(0,16):
 	print("文本已替换")
 
 
-for n in range(0,16):
+for n in range(0,5):
 	# 使用 open() 函数以只读模式打开我们的文本文件
 	with open(r"./scenes/cornell-box/doppler_point_correlated_sampler_backward.xml", 'r',encoding='UTF-8') as file:
 
@@ -40,8 +40,8 @@ for n in range(0,16):
 		data = file.read()
 		search_text1 = 'z="-0.500"'
 		search_text2 = 'z="-0.450"'
-		replace_text1='z="{:.5f}"'.format(-0.5-0.1*n) 
-		replace_text2='z="{:.5f}"'.format(-0.5-0.1*(n+0.01)) 
+		replace_text1='z="{:.5f}"'.format(-0.5-0.2*n) 
+		replace_text2='z="{:.5f}"'.format(-0.5-0.2*(n+0.01)) 
 		data = data.replace(search_text1, replace_text1)
 		data = data.replace(search_text2, replace_text2)
 
@@ -63,7 +63,7 @@ for n in range(0,16):
 	print("文本已替换")
 
 
-for n in range(0,16):
+for n in range(0,5):
 	# 使用 open() 函数以只读模式打开我们的文本文件
 	with open(r"./scenes/cornell-box/doppler_point_correlated_sampler_both.xml", 'r',encoding='UTF-8') as file:
 
@@ -71,15 +71,15 @@ for n in range(0,16):
 		data = file.read()
 		search_text1 = 'z="-0.000"'
 		search_text2 = 'z="-0.100"'
-		replace_text1='z="{:.2f}"'.format(-0.5-0.1*n) 
-		replace_text2='z="{:.2f}"'.format(-0.5-0.1*(n+1)) 
+		replace_text1='z="{:.5f}"'.format(-0.5-0.2*n) 
+		replace_text2='z="{:.5f}"'.format(-0.5-0.2*(n+0.0001)) 
 		data = data.replace(search_text1, replace_text1)
 		data = data.replace(search_text2, replace_text2)
 
 		search_text1 = 'z="0.000"'
 		search_text2 = 'z="0.100"'
-		replace_text1='z="{:.2f}"'.format(-1.2+0.1*n) 
-		replace_text2='z="{:.2f}"'.format(-1.2+0.1*(n+1)) 
+		replace_text1='z="{:.5f}"'.format(-1.2+0.2*n) 
+		replace_text2='z="{:.5f}"'.format(-1.2+0.2*(n+0.0001)) 
 		# 使用 replace() 函数搜索和替换文本
 		data = data.replace(search_text1, replace_text1)
 		data = data.replace(search_text2, replace_text2)
@@ -95,7 +95,7 @@ for n in range(0,16):
 
 
 
-for n in range(0,7):
+for n in range(0,5):
 	# 使用 open() 函数以只读模式打开我们的文本文件
 	with open(r"./scenes/cornell-box/doppler_point_correlated_sampler_ball.xml", 'r',encoding='UTF-8') as file:
 

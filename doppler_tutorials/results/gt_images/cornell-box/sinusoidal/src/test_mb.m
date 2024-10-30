@@ -19,12 +19,15 @@ while(1)
   gpre=g1+(g1-g0);
   %gpre=g1;
   gbac=g3+(g4-g3);
-  top_range=30e-2;
-  bot_range=10e-2;
-  %pre_range=0e-3;
-  for m=1:length(1)
-    top=min((1+top_range(m))*max(pre,bac),(1-top_range(m))*max(pre,bac));
-    bot=max((1+bot_range(m))*min(pre,bac),(1-bot_range(m))*min(pre,bac));
+%   for keytop=(0e-2:5e-2:50e-2)
+  for keytop=0.25
+  for keybot=(0e-2:5e-2:50e-2)
+%   for keytop=40e-2
+%   for keybot=25e-2
+  top_range=keytop;
+  bot_range=keybot;
+    top=min((1+top_range)*max(pre,bac),(1-top_range)*max(pre,bac));
+    bot=max((1+bot_range)*min(pre,bac),(1-bot_range)*min(pre,bac));
     %top=max((1+mb_range(m))*max(pre,bac),(1-mb_range(m))*max(pre,bac));
     %bot=min((1+mb_range(m))*min(pre,bac),(1-mb_range(m))*min(pre,bac));
     %pre_top=max(pre*(1+pre_range),pre*(1-pre_range));
@@ -40,7 +43,7 @@ while(1)
     colormap_name = redblue(256);  % 选择颜色映射表（'jet', 'parula', 'hsv', 等）
     indexed_image = uint8(res_i * 255);  % 将归一化数据映射到0-255
     rgb_image = ind2rgb(indexed_image, colormap_name);  % 转换为RGB图像
-    %imshow(rgb_image);
+    imshow(rgb_image);
     imwrite(rgb_image,"./"+num2str(n)+"_mb.png");
 
     f2_pre=res.*pre+~res.*f2;
@@ -66,5 +69,5 @@ while(1)
       imwrite(rgb_image,"./"+num2str(n)+"_speed_pre.png")
 
   end
-  n=n+1;
+  end
 end
